@@ -1,46 +1,56 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Login</title>
-    <!-- Google Fonts -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="background-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-    
-    <div class="login-card">
-        <div class="login-header">
-            <h2>Welcome Back</h2>
-            <p>Please enter your details</p>
-        </div>
+<div class="materialContainer">
 
-        <form>
-            <div class="input-box">
-                <input type="text" required>
-                <label>Email atau Username</label>
-            </div>
-            <div class="input-box">
-                <input type="password" required>
-                <label>Password</label>
-            </div>
-            
-            <div class="options">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
+   <div class="box">
 
-            <button type="submit" class="btn-login">Sign In</button>
-            
-            <div class="signup-link">
-                Don't have an account? <a href="#">Create for free</a>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
+      <div class="title">LOGIN</div>
+
+      <div class="input">
+         <label for="name">Username</label>
+         <input type="text" name="name" id="name">
+         <span class="spin"></span>
+      </div>
+
+      <div class="input">
+         <label for="pass">Password</label>
+         <input type="password" name="pass" id="pass">
+         <span class="spin"></span>
+      </div>
+
+      <div class="button login">
+         <button><span>GO</span> <i class="fa fa-check"></i></button>
+      </div>
+
+      <a href="" class="pass-forgot">Forgot your password?</a>
+
+   </div>
+
+   <div class="overbox">
+      <div class="material-button alt-2"><span class="shape"></span></div>
+
+      <div class="title">REGISTER</div>
+
+      <div class="input">
+         <label for="regname">Username</label>
+         <input type="text" name="regname" id="regname">
+         <span class="spin"></span>
+      </div>
+
+      <div class="input">
+         <label for="regpass">Password</label>
+         <input type="password" name="regpass" id="regpass">
+         <span class="spin"></span>
+      </div>
+
+      <div class="input">
+         <label for="reregpass">Repeat Password</label>
+         <input type="password" name="reregpass" id="reregpass">
+         <span class="spin"></span>
+      </div>
+
+      <div class="button">
+         <button><span>NEXT</span></button>
+      </div>
+
+   </div>
+
+</div>
