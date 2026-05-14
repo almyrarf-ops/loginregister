@@ -33,7 +33,7 @@ window.onload = function () {
 
         // otomatis balik ke login
         container.classList.remove('active');
-    });
+    }
 
     // LOGIN
     window.goLogin = function () {
