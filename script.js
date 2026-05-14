@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
+
 const registerBtn = document.querySelector('.register-btn');
+
 const loginBtn = document.querySelector('.login-btn');
 
 registerBtn.addEventListener('click', () => {
@@ -8,6 +10,23 @@ registerBtn.addEventListener('click', () => {
 
 loginBtn.addEventListener('click', () => {
     container.classList.remove('active');
+});
+
+function goRegister() {
+
+    const username = document.getElementById("registerUsername").value;
+
+    const email = document.getElementById("registerEmail").value;
+
+    const password = document.getElementById("registerPassword").value;
+
+    localStorage.setItem("username", username);
+
+    localStorage.setItem("email", email);
+
+    localStorage.setItem("password", password);
+
+    alert("Registrasi berhasil!");
 });
 
 function goLogin() {
@@ -20,7 +39,7 @@ function goLogin() {
 
     const savedPassword = localStorage.getItem("password");
 
-    // kalau belum pernah register sama sekali
+    // akun belum ada
     if (savedUsername === null || savedPassword === null) {
 
         alert("Belum punya akun! Silakan register.");
@@ -50,20 +69,4 @@ function goLogin() {
 
     // login berhasil
     alert("Login berhasil!");
-}
-
-function goRegister() {
-
-    const username = document.getElementById("registerUsername").value;
-
-    const email = document.getElementById("registerEmail").value;
-
-    const password = document.getElementById("registerPassword").value;
-
-    // simpan ke localStorage
-    localStorage.setItem("username", username);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-
-    alert("Registrasi berhasil!");
 }
