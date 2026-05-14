@@ -21,3 +21,19 @@ function goLogin() {
 
     alert("Login berhasil");
 }
+
+function goRegister() {
+
+    const username = document.getElementById("registerUsername").value;
+
+    const email = document.getElementById("registerEmail").value;
+
+    const password = document.getElementById("registerPassword").value;
+
+    // simpan ke localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    alert("Registrasi berhasil!");
+}
