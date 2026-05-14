@@ -4,15 +4,14 @@ const registerBtn = document.querySelector('.register-btn');
 
 const loginBtn = document.querySelector('.login-btn');
 
-registerBtn.addEventListener('click', () => {
+registerBtn.addEventListener('click', function () {
     container.classList.add('active');
 });
 
-loginBtn.addEventListener('click', () => {
+loginBtn.addEventListener('click', function () {
     container.classList.remove('active');
 });
 
-// REGISTER
 function goRegister() {
 
     const username = document.getElementById("registerUsername").value;
@@ -29,11 +28,9 @@ function goRegister() {
 
     alert("Registrasi berhasil!");
 
-    // kembali ke login
     container.classList.remove('active');
 }
 
-// LOGIN
 function goLogin() {
 
     const username = document.getElementById("loginUsername").value;
@@ -44,17 +41,15 @@ function goLogin() {
 
     const savedPassword = localStorage.getItem("password");
 
-    // belum ada akun
-    if (savedUsername === null || savedPassword === null) {
+    if (!savedUsername || !savedPassword) {
 
-        alert("Belum punya akun! Silakan register.");
+        alert("Belum punya akun!");
 
         container.classList.add('active');
 
         return;
     }
 
-    // username salah
     if (username !== savedUsername) {
 
         alert("Username belum terdaftar!");
@@ -64,7 +59,6 @@ function goLogin() {
         return;
     }
 
-    // password salah
     if (password !== savedPassword) {
 
         alert("Password salah!");
@@ -72,6 +66,5 @@ function goLogin() {
         return;
     }
 
-    // berhasil login
     alert("Login berhasil!");
 }
