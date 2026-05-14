@@ -1,81 +1,77 @@
-window.onload = function ()
+const container = document.querySelector('.container');
 
-    const container = document.querySelector('.container');
+const registerBtn = document.querySelector('.register-btn');
 
-    const registerBtn = document.querySelector('.register-btn');
+const loginBtn = document.querySelector('.login-btn');
 
-    const loginBtn = document.querySelector('.login-btn');
+registerBtn.addEventListener('click', () => {
+    container.classList.add('active');
+});
 
-    registerBtn.addEventListener('click', () => 
+loginBtn.addEventListener('click', () => {
+    container.classList.remove('active');
+});
+
+// REGISTER
+function goRegister() {
+
+    const username = document.getElementById("registerUsername").value;
+
+    const email = document.getElementById("registerEmail").value;
+
+    const password = document.getElementById("registerPassword").value;
+
+    localStorage.setItem("username", username);
+
+    localStorage.setItem("email", email);
+
+    localStorage.setItem("password", password);
+
+    alert("Registrasi berhasil!");
+
+    // kembali ke login
+    container.classList.remove('active');
+}
+
+// LOGIN
+function goLogin() {
+
+    const username = document.getElementById("loginUsername").value;
+
+    const password = document.getElementById("loginPassword").value;
+
+    const savedUsername = localStorage.getItem("username");
+
+    const savedPassword = localStorage.getItem("password");
+
+    // belum ada akun
+    if (savedUsername === null || savedPassword === null) {
+
+        alert("Belum punya akun! Silakan register.");
+
         container.classList.add('active');
-    });
 
-    loginBtn.addEventListener('click', () => 
-        container.classList.remove('active');
-    });
-
-    // REGISTER
-    window.goRegister = function () 
-
-        const username = document.getElementById("registerUsername").value;
-
-        const email = document.getElementById("registerEmail").value;
-
-        const password = document.getElementById("registerPassword").value;
-
-        localStorage.setItem("username", username);
-
-        localStorage.setItem("email", email);
-
-        localStorage.setItem("password", password);
-
-        alert("Registrasi berhasil!");
-
-        // otomatis balik ke login
-        container.classList.remove('active');
+        return;
     }
 
-    // LOGIN
-    window.goLogin = function () 
+    // username salah
+    if (username !== savedUsername) {
 
-        const username = document.getElementById("loginUsername").value;
+        alert("Username belum terdaftar!");
 
-        const password = document.getElementById("loginPassword").value;
+        container.classList.add('active');
 
-        const savedUsername = localStorage.getItem("username");
-
-        const savedPassword = localStorage.getItem("password");
-
-        // belum punya akun
-        if (savedUsername === null || savedPassword === null) 
-
-            alert("Belum punya akun! Silakan register.");
-
-            container.classList.add('active');
-
-            return;
-        }
-
-        // username belum terdaftar
-        if (username !== savedUsername) 
-
-            alert("Username belum terdaftar!");
-
-            container.classList.add('active');
-
-            return;
-        }
-
-        // password salah
-        if (password !== savedPassword) 
-
-            alert("Password salah!");
-
-            return;
-        }
-
-        // login berhasil
-        alert("Login berhasil!");
+        return;
     }
 
+    // password salah
+    if (password !== savedPassword) {
+
+        alert("Password salah!");
+
+        return;
+    }
+
+    // berhasil login
+    alert("Login berhasil!");
 }
