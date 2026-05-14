@@ -9,3 +9,15 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove('active');
 });
+
+function goLogin() {
+
+    const username = document.getElementById("loginUsername").value;
+
+    const password = document.getElementById("loginPassword").value;
+
+    console.log(username);
+    console.log(password);
+
+    alert("Login berhasil");
+}
