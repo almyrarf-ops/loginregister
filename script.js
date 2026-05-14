@@ -1,3 +1,6 @@
+localStorage.clear();
+
+const container = document.querySelector('.container');
 const container = document.querySelector('.container');
 const registerBtn = document.querySelector('.register-btn');
 const loginBtn = document.querySelector('.login-btn');
@@ -34,14 +37,19 @@ function goLogin() {
     }
 
     // cek username & password
-    if (username === savedUsername && password === savedPassword) {
+    if (username !== savedUsername) {
 
-        alert("Login berhasil!");
+    alert("Username belum terdaftar!");
+
+    container.classList.add('active');
+
+    } else if (password !== savedPassword) {
+
+    alert("Password salah!");
 
     } else {
 
-        alert("Username atau password salah!");
-    }
+    alert("Login berhasil!");
 }
 
 function goRegister() {
