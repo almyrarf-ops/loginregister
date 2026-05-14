@@ -12,14 +12,36 @@ loginBtn.addEventListener('click', () => {
 
 function goLogin() {
 
+    // ambil input login
     const username = document.getElementById("loginUsername").value;
 
     const password = document.getElementById("loginPassword").value;
 
-    console.log(username);
-    console.log(password);
+    // ambil data dari localStorage
+    const savedUsername = localStorage.getItem("username");
 
-    alert("Login berhasil");
+    const savedPassword = localStorage.getItem("password");
+
+    // cek apakah akun ada
+    if (savedUsername === null || savedPassword === null) {
+
+        alert("Akun belum terdaftar! Silakan register terlebih dahulu.");
+
+        // pindah ke register
+        container.classList.add('active');
+
+        return;
+    }
+
+    // cek username & password
+    if (username === savedUsername && password === savedPassword) {
+
+        alert("Login berhasil!");
+
+    } else {
+
+        alert("Username atau password salah!");
+    }
 }
 
 function goRegister() {
