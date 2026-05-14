@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function ()
 
     const container = document.querySelector('.container');
 
@@ -6,16 +6,16 @@ window.onload = function () {
 
     const loginBtn = document.querySelector('.login-btn');
 
-    registerBtn.addEventListener('click', () => {
+    registerBtn.addEventListener('click', () => 
         container.classList.add('active');
     });
 
-    loginBtn.addEventListener('click', () => {
+    loginBtn.addEventListener('click', () => 
         container.classList.remove('active');
     });
 
     // REGISTER
-    window.goRegister = function () {
+    window.goRegister = function () 
 
         const username = document.getElementById("registerUsername").value;
 
@@ -36,7 +36,7 @@ window.onload = function () {
     }
 
     // LOGIN
-    window.goLogin = function () {
+    window.goLogin = function () 
 
         const username = document.getElementById("loginUsername").value;
 
@@ -47,7 +47,7 @@ window.onload = function () {
         const savedPassword = localStorage.getItem("password");
 
         // belum punya akun
-        if (savedUsername === null || savedPassword === null) {
+        if (savedUsername === null || savedPassword === null) 
 
             alert("Belum punya akun! Silakan register.");
 
@@ -57,7 +57,7 @@ window.onload = function () {
         }
 
         // username belum terdaftar
-        if (username !== savedUsername) {
+        if (username !== savedUsername) 
 
             alert("Username belum terdaftar!");
 
@@ -67,7 +67,7 @@ window.onload = function () {
         }
 
         // password salah
-        if (password !== savedPassword) {
+        if (password !== savedPassword) 
 
             alert("Password salah!");
 
